@@ -1,0 +1,17 @@
+<div class="carousel slide" id="controlledCarousel" data-ride="carousel">
+  <!-- indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#controlledCarousel" *ngFor="let image of imageURLs; let i=index" attr.data-slide-to="{{i}}"
+        [ngClass]="{active: i===0}"></li>
+  </ol>
+
+  <!-- carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active"
+         *ngFor="let image of imageURLs; let i = index"
+         [ngClass]="{active: i===0}"
+         (click)="onClick(i)">
+        <img class="d-block w-100" [src]="image" alt="first-slide">
+    </div>
+  </div>
+</div>
